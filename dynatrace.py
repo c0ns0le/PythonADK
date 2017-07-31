@@ -56,7 +56,12 @@ def convertToBytes(str):
         return str
     else:
         return bytes(str, 'utf-8')
-	    
+
+def DYNATRACE_START_SERVER_PUREPATH():
+    DYNATRACE_ADK.dynatrace_start_server_purepath()
+
+def DYNATRACE_END_SERVER_PUREPATH():
+    DYNATRACE_ADK.dynatrace_end_server_purepath()
 
 def DYNATRACE_UNINITIALIZE():
     DYNATRACE_ADK.dynatrace_uninitialize()
@@ -71,7 +76,6 @@ def DYNATRACE_GET_TAG_AS_STRING():
 
 def DYNATRACE_SET_TAG_FROM_STRING(dynatrace_tag):
     DYNATRACE_ADK.dynatrace_set_tag_from_string(convertToBytes(dynatrace_tag))
-
 
 # grab parameters from the stack frame
 def _DYNATRACE_ENTER(entry_point, method=None, params_to_capture=None):
